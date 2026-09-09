@@ -1,0 +1,104 @@
+:root {
+  --ink: #202022;
+  --paper: #f6f3ec;
+  --muted: #77736d;
+  --yellow: #e9fb65;
+  --blue: #a5d7ff;
+  --pink: #f6b7c9;
+  --green: #a9dfbd;
+  --border: rgba(32, 32, 34, .18);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+}
+body::selection { background: var(--yellow); }
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+a { color: inherit; text-decoration: none; }
+.site-header {
+  align-items: center; display: flex; justify-content: space-between;
+  max-width: 1320px; margin: auto; padding: 25px 42px;
+  border-bottom: 1px solid var(--border); position: relative; z-index: 2;
+}
+.brand { align-items: center; display: flex; gap: 11px; font: 500 10px/1.05 "DM Mono", monospace; text-transform: uppercase; letter-spacing: .06em; }
+.brand-mark { align-items: center; background: var(--ink); border-radius: 50%; color: var(--yellow); display: flex; font: 700 17px "Space Grotesk"; height: 34px; justify-content: center; width: 34px; }
+.brand strong { font-size: 12px; }
+nav { display: flex; gap: 38px; font-size: 13px; }
+nav a { border-bottom: 1px solid transparent; transition: border-color .2s; }
+nav a:hover { border-color: var(--ink); }
+.header-pill { border: 1px solid var(--ink); border-radius: 99px; font-size: 12px; padding: 10px 15px; transition: background .2s, color .2s; }
+.header-pill:hover { background: var(--ink); color: var(--paper); }
+.header-pill span { margin-left: 10px; }
+.hero { min-height: 710px; max-width: 1320px; margin: auto; overflow: hidden; padding: 108px 9.2% 44px; position: relative; }
+.eyebrow { font: 500 10px "DM Mono", monospace; letter-spacing: .11em; margin: 0 0 27px; text-transform: uppercase; }
+.pulse { background: #48c67b; border-radius: 50%; display: inline-block; height: 7px; margin-right: 7px; vertical-align: 1px; width: 7px; }
+h1 { font-size: clamp(54px, 7vw, 105px); letter-spacing: -.075em; line-height: .92; margin: 0; max-width: 720px; }
+h1 em, h2 em { color: #d7e94e; font-style: normal; }
+.hero-intro { color: var(--muted); font-size: 15px; line-height: 1.55; margin: 35px 0 27px; max-width: 380px; }
+.primary-button { align-items: center; background: var(--ink); color: var(--paper); display: inline-flex; font-size: 12px; gap: 32px; padding: 14px 17px; transition: transform .2s, background .2s; }
+.primary-button:hover { background: #44444a; transform: translateY(-3px); }
+.hero-art { height: 500px; position: absolute; right: 7%; top: 115px; width: 420px; }
+.hero-number { color: var(--yellow); font-size: 300px; font-weight: 700; letter-spacing: -.15em; line-height: 1; position: absolute; right: 0; top: 65px; transform: rotate(-9deg); }
+.orbit { border: 1px solid var(--ink); border-radius: 50%; height: 305px; left: 63px; position: absolute; top: 110px; transform: rotate(27deg); width: 410px; }
+.orbit-two { border-color: #d5dc59; height: 130px; left: 174px; top: 190px; transform: rotate(-22deg); width: 270px; }
+.sticker { background: var(--ink); color: var(--paper); font: 500 10px/1.2 "DM Mono", monospace; padding: 12px; position: absolute; text-align: center; transform: rotate(8deg); }
+.sticker-top { right: 15px; top: 20px; }
+.sticker-bottom { background: var(--pink); bottom: 48px; color: var(--ink); right: 25px; transform: rotate(-8deg); }
+.scribble { color: var(--ink); font-size: 42px; left: 25px; position: absolute; top: 75px; transform: rotate(15deg); }
+.hero-footer { align-items: end; bottom: 46px; display: flex; font: 10px/1.3 "DM Mono", monospace; justify-content: space-between; left: 9.2%; letter-spacing: .04em; position: absolute; right: 9.2%; text-transform: uppercase; }
+.line { background: var(--ink); height: 1px; margin: 0 35px 6px; opacity: .35; width: 50%; }
+.team-section { background: var(--ink); color: var(--paper); padding: 100px max(42px, 9.2%) 120px; }
+.section-heading { align-items: end; display: flex; justify-content: space-between; margin: 0 auto 55px; max-width: 1135px; }
+.section-heading .eyebrow, .manifesto .eyebrow, .contact-section .eyebrow { color: #a6a4a0; }
+h2 { font-size: clamp(43px, 5.2vw, 76px); letter-spacing: -.07em; line-height: .92; margin: 0; }
+h2 span { color: var(--yellow); }
+.heading-note { color: #aaa9a5; font-size: 13px; line-height: 1.5; max-width: 210px; }
+.team-grid { display: grid; gap: 17px; grid-template-columns: repeat(4, 1fr); margin: auto; max-width: 1135px; }
+.person-card { color: var(--ink); min-height: 485px; padding: 18px; position: relative; transition: transform .25s; }
+.person-card:hover { transform: translateY(-9px) rotate(-1deg); }
+.card-yellow { background: var(--yellow); }.card-blue { background: var(--blue); }.card-pink { background: var(--pink); }.card-green { background: var(--green); }
+.card-topline { display: flex; font: 9px "DM Mono", monospace; justify-content: space-between; text-transform: uppercase; }
+.portrait { align-items: center; border: 1px solid var(--ink); border-radius: 50%; display: flex; font-size: 63px; height: 170px; justify-content: center; margin: 28px auto 26px; position: relative; width: 170px; }
+.portrait::before, .portrait::after { border: 1px solid var(--ink); border-radius: 50%; content: ""; height: 35px; position: absolute; width: 35px; }
+.portrait::before { left: 27px; top: 54px; }.portrait::after { right: 27px; top: 54px; }
+.portrait span { font-size: 50px; margin-top: 28px; }
+.portrait-santino { border-radius: 46% 54% 50% 48%; transform: rotate(8deg); }.portrait-franco { border-radius: 50% 42% 54% 46%; }.portrait-fabrizio { border-radius: 53% 45% 48% 55%; transform: rotate(-6deg); }
+.person-role { font: 9px "DM Mono", monospace; margin: 0 0 8px; text-transform: uppercase; }
+.person-info h3 { font-size: 29px; letter-spacing: -.06em; margin: 0 0 10px; }
+.person-info h3 sup { font-size: 15px; vertical-align: top; }
+.person-info > p:not(.person-role) { font-size: 12px; line-height: 1.45; margin: 0; }
+.traits { bottom: 18px; display: flex; font: 9px "DM Mono", monospace; gap: 7px; left: 18px; position: absolute; text-transform: uppercase; }
+.traits span { border: 1px solid var(--ink); border-radius: 99px; padding: 6px 8px; }
+.card-arrow { bottom: 18px; font-size: 20px; position: absolute; right: 18px; }
+.manifesto { padding: 122px max(42px, 9.2%) 110px; }
+blockquote { font-size: clamp(38px, 5.5vw, 82px); letter-spacing: -.07em; line-height: .95; margin: 0; max-width: 1000px; }
+blockquote span { color: #999790; }
+.manifesto-bottom { align-items: end; display: flex; justify-content: space-between; margin-top: 70px; }
+.manifesto-bottom p { color: var(--muted); font-size: 14px; line-height: 1.45; max-width: 350px; }.manifesto-bottom strong { color: var(--ink); }
+.big-star { font-size: 70px; transform: rotate(15deg); }
+.contact-section { align-items: end; background: var(--pink); display: flex; justify-content: space-between; padding: 80px max(42px, 9.2%); }
+.dark-button { background: var(--ink); }.dark-button:hover { background: white; color: var(--ink); }
+footer { display: flex; font: 10px "DM Mono", monospace; justify-content: space-between; padding: 22px max(42px, 9.2%); text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .hero-art { opacity: .38; right: 0; }.hero-copy { position: relative; z-index: 1; }.team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .site-header { padding: 20px; }.site-header nav { display: none; }.header-pill { font-size: 10px; padding: 8px 10px; }
+  .hero { min-height: 680px; padding: 75px 25px 35px; }.hero-art { height: 370px; right: -95px; top: 270px; transform: scale(.75); transform-origin: top left; }.hero-footer { bottom: 28px; left: 25px; right: 25px; }.line { margin: 0 15px 6px; }
+  .team-section { padding: 75px 20px; }.section-heading { align-items: start; display: block; }.heading-note { margin-top: 25px; }.team-grid { gap: 12px; grid-template-columns: 1fr; }.person-card { min-height: 430px; }
+  .manifesto { padding: 80px 25px; }.manifesto-bottom { align-items: start; display: block; }.big-star { display: block; margin-top: 30px; }.contact-section { align-items: start; display: block; padding: 75px 25px; }.contact-section .primary-button { margin-top: 35px; } footer { display: block; line-height: 2.3; padding: 20px 25px; }
+}
